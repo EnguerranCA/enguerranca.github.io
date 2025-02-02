@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+      <h1>Demo V1.010.32.1dalpha04</h1>
+        <a-box id="test1" color="red" position="0 2 -5" rotation="0 0 0" scale="2 2 2"></a-box>
+        <a-box id="test2" color="blue" position="3 2 -5" rotation="0 0 0" scale="2 2 2"></a-box>
+        <a-box id="test3" color="green" position="-3 2 -5" rotation="0 0 0" scale="2 2 2"></a-box>
+
+        <a-sky id="skybox" src="./assets/test2.png"></a-sky>
+
+      </a-scene>
+  </body>
+  <script src="script.js"></script>
+  <script>
+    var skybox = document.querySelector('#skybox');
+    
+    var test1 = document.querySelector('#test1');
+    var test2 = document.querySelector('#test2');
+    var test3 = document.querySelector('#test3');
+
+    // When we click on a box, we change the skybox image
+    test1.addEventListener('click', function () {
+        console.log('test1 clicked');
+      skybox.setAttribute('src', './assets/test1.png');
+    });
+
+    test2.addEventListener('click', function () {
+      skybox.setAttribute('src', './assets/test2.png');
+    });
+
+    test3.addEventListener('click', function () {
+      skybox.setAttribute('src', './assets/test3.png');
+    });
+
+  </script>
+</html>
